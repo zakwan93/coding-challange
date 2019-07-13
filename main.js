@@ -45,6 +45,8 @@ data = {
   ]
 };
 
+let cardList = document.getElementById("card-list");
+
 let dropdown = document.getElementById("select-bike");
 dropdown.required = true;
 dropdown.length = 0;
@@ -58,9 +60,17 @@ dropdown.selectedIndex = 0;
 var mydata = data.products;
 
 for (let i = 0; i < mydata.length; i++) {
+  let card = `<div class="card-container" id="card">
+     <img src="${mydata[i].image}" alt="" id="img">
+    <h3 id="name">${mydata[i].name}</h3>
+    <h4 id="price">Price: ${mydata[i].price}</h4>
+    <a href="#form" class="card_link">BOOK NOW</a>
+  </div>`;
+  cardList.insertAdjacentHTML("afterbegin", card);
+}
+
+for (let i = 0; i < mydata.length; i++) {
   var option = document.createElement("option");
-  var image = document.createElement("img");
-  image.src = mydata[i].image;
   option.text = mydata[i].name;
   option.value = mydata[i].name;
   if (mydata[i].product_type === "bike") {

@@ -1,7 +1,9 @@
 // COLOR VARIABLES
 
-$color-grey-dark-1: #54483a;
-$color-grey-dark-2: #6d5d4b;
+$color-grey-light-1: #d6cab0;
+$color-grey-light-2: #fcfaf1;
+$color-red-dark-1: #e81515;
+$color-blue-dark-1: #222d68;
 
 // FONT VARIABLES
 $font-primary: "Nunito", sans-serif;
@@ -19,6 +21,7 @@ $bp-small: 37.5em; // 600px;
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -32,7 +35,7 @@ html {
 
 body {
   font-family: $font-primary;
-  color: $color-grey-dark-2;
+  color: $color-grey-light-2;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -47,83 +50,146 @@ body {
     font-size: 4rem;
     padding: 2rem;
     position: relative;
-    background-color: $color-grey-dark-1;
-    color: white;
+    background-color: $color-blue-dark-1;
   }
 
-  .select {
-    width: 80%;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    text-transform: uppercase;
+  h2 {
+    font-size: 3.5rem;
+    color: $color-blue-dark-1;
+    margin: 1rem;
+  }
+
+  .card-list {
+    width: 85vw;
+    margin: 2rem auto;
+    margin-bottom: 10rem;
+    display: grid;
+    padding: 2rem 10rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid $color-grey-light-2;
+    background-color: $color-blue-dark-1;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
-    margin-bottom: 6rem;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
 
-    @media only screen and (max-width: $bp-small) {
-      width: 100%;
-    }
+  .card-container:hover {
+    transform: scale(1.05);
+  }
 
-    label {
-      font-size: 3rem;
-      display: block;
-      font-weight: 800;
-      letter-spacing: 0.5rem;
-      margin-bottom: 10px;
-      width: 100%;
+  img {
+    border-radius: 0.3rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
 
-      @media only screen and (max-width: $bp-medium) {
-        letter-spacing: 0.2;
-      }
+  h4 {
+    font-size: 1.5rem;
+  }
 
-      @media only screen and (max-width: $bp-small) {
-        letter-spacing: 0.1;
-      }
-    }
-
-    .select-option {
-      padding: 5px 8px;
-      border: none;
-      font-size: 2rem;
-      color: $color-grey-dark-1;
-      box-shadow: none;
-      background: transparent;
-      background-image: none;
-      -webkit-appearance: none;
-      border: 1px solid $color-grey-dark-1;
-      width: 70%;
-      border-radius: 3px;
-      overflow: hidden;
-      background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png")
-        no-repeat 98% 50%;
-
-      @media only screen and (max-width: $bp-small) {
-        width: 90%;
-      }
-    }
-
-    .select-option:focus {
-      outline: none;
-    }
-
-    .submit {
-      display: block;
+  .card_link {
+    &,
+    &:link,
+    &:visited {
       padding: 1rem 2rem;
-      margin-top: 2rem;
-      color: $color-grey-dark-1;
+      text-decoration: none;
+      color: $color-grey-light-1;
       font-size: 1.6rem;
-      border: 1px solid $color-grey-dark-1;
+      border: 1px solid rgba($color-grey-light-1, 0.5);
       border-radius: 0.3rem;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      text-transform: uppercase;
+      margin-top: 1rem;
 
       &:hover {
-        background-color: rgba($color-grey-dark-1, 0.5);
-        color: white;
+        background-color: rgba($color-red-dark-1, 0.5);
+        transform: translateY(-0.2rem);
+      }
+    }
+  }
+
+  form {
+    .select {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 0 auto;
+      text-transform: uppercase;
+      backface-visibility: hidden;
+      margin-bottom: 6rem;
+      height: 100%;
+
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+      }
+
+      label {
+        font-size: 3rem;
+        display: block;
+        font-weight: 800;
+        letter-spacing: 0.5rem;
+        margin-bottom: 10px;
+        width: 100%;
+
+        @media only screen and (max-width: $bp-medium) {
+          letter-spacing: 0.2;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+          letter-spacing: 0.1;
+        }
+      }
+
+      &-option {
+        padding: 5px 8px;
+        border: none;
+        font-size: 2rem;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        border: 1px solid $color-grey-light-1;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 3px;
+        overflow: hidden;
+        background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png")
+          no-repeat 98% 50%;
+
+        @media only screen and (max-width: $bp-small) {
+          width: 90%;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .submit {
+        padding: 1.5rem 2rem;
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.6rem;
+        border: 1px solid rgba($color-grey-light-2, 0.5);
+        border-radius: 0.3rem;
+        margin-top: 1rem;
+        text-transform: uppercase;
+        background-color: $color-blue-dark-1;
+        margin: 1.5rem auto;
+
+        &:hover {
+          background-color: rgba($color-red-dark-1, 0.8);
+          transform: translateY(-0.2rem);
+        }
       }
     }
   }
