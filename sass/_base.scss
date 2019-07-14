@@ -161,6 +161,7 @@ body {
         margin: 1.5rem auto;
         text-decoration: none;
         outline: none;
+        -webkit-appearance: none;
 
         &:hover {
           background-color: rgba($color-dark-1, 0.8);

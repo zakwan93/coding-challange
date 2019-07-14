@@ -59,7 +59,7 @@ dropdown.selectedIndex = 0;
 
 var mydata = data.products;
 
-for (let i = 0; i < mydata.length; i++) {
+for (let i = 5; i < mydata.length; i--) {
   let card = `<div class="card-container" id="card">
      <img src="${mydata[i].image}" alt="" id="img">
     <h3 id="name">${mydata[i].name}</h3>
