@@ -1,0 +1,33 @@
+.header {
+  height: 85vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-grey-light-1, 0.8),
+      rgba($color-grey-light-2, 0.8)
+    ),
+    url(../img/bike-hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
+
+  @media only screen and(max-width: $bp-largest) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    height: 100vh;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -1,13 +1,11 @@
 // COLOR VARIABLES
 
 $color-grey-light-1: #d6cab0;
-$color-grey-light-2: #fcfaf1;
-$color-red-dark-1: #e81515;
-$color-blue-dark-1: #222d68;
-
+$color-grey-light-2: #f9f7f6;
+$color-dark-1: #c69963;
+$color-blue-dark-1: #101d2c;
 // FONT VARIABLES
-$font-primary: "Nunito", sans-serif;
-$font-display: "Josefin Sans", sans-serif;
+$font-primary: "Do Hyeon", sans-serif;
 
 //Responnsive Breakpoints
 $bp-largest: 75em; // 1200px
@@ -35,7 +33,7 @@ html {
 
 body {
   font-family: $font-primary;
-  color: $color-grey-light-2;
+  color: black;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -46,17 +44,10 @@ body {
   height: 100vh;
   width: 100%;
 
-  h1 {
-    font-size: 4rem;
-    padding: 2rem;
-    position: relative;
-    background-color: $color-blue-dark-1;
-  }
-
-  h2 {
-    font-size: 3.5rem;
-    color: $color-blue-dark-1;
-    margin: 1rem;
+  .linear-gradient-text {
+    background: -webkit-linear-gradient($color-blue-dark-1, $color-dark-1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
 
   .card-list {
@@ -66,8 +57,7 @@ body {
     display: grid;
     padding: 2rem 10rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-
+    grid-gap: 2rem;
     @media only screen and(max-width: $bp-largest) {
       padding: 2rem;
     }
@@ -76,47 +66,35 @@ body {
   .card-container {
     display: flex;
     flex-direction: column;
-    padding: 25px;
-    border-radius: 5px;
     border: 1px solid $color-grey-light-2;
-    background-color: $color-blue-dark-1;
-    cursor: pointer;
+    background-color: $color-grey-light-2;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
   }
 
-  .card-container:hover {
-    transform: scale(1.05);
-  }
-
-  img {
-    border-radius: 0.3rem;
-  }
-  h3 {
-    font-size: 3rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
   .card_link {
     &,
     &:link,
     &:visited {
-      padding: 1rem 2rem;
-      text-decoration: none;
-      color: $color-grey-light-1;
-      font-size: 1.6rem;
-      border: 1px solid rgba($color-grey-light-1, 0.5);
-      border-radius: 0.3rem;
-      margin-top: 1rem;
+      background-color: $color-dark-1;
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding: 1.8rem 3rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      @media only screen and(max-width: $bp-small) {
+        padding: 1rem;
+      }
 
       &:hover {
-        background-color: rgba($color-red-dark-1, 0.5);
-        transform: translateY(-0.2rem);
+        transform: translateY(3px);
+        box-shadow: 0 1rem 4rem rgba(#000, 0.3);
       }
     }
   }
@@ -141,7 +119,7 @@ body {
         display: block;
         font-weight: 800;
         letter-spacing: 0.5rem;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
         width: 100%;
 
         @media only screen and (max-width: $bp-medium) {
@@ -154,9 +132,10 @@ body {
       }
 
       &-option {
-        padding: 5px 8px;
+        padding: 0.5rem 0.8rem;
         border: none;
         font-size: 2rem;
+        font-family: $font-primary;
         box-shadow: none;
         background: transparent;
         background-image: none;
@@ -164,7 +143,7 @@ body {
         border: 1px solid $color-grey-light-1;
         width: 70%;
         margin: 0 auto;
-        border-radius: 3px;
+        border-radius: 0.3rem;
         overflow: hidden;
         background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png")
           no-repeat 98% 50%;
@@ -179,19 +158,12 @@ body {
       }
 
       .submit {
-        padding: 1.5rem 2rem;
-        text-decoration: none;
-        color: inherit;
-        font-size: 1.6rem;
-        border: 1px solid rgba($color-grey-light-2, 0.5);
-        border-radius: 0.3rem;
-        margin-top: 1rem;
-        text-transform: uppercase;
-        background-color: $color-blue-dark-1;
         margin: 1.5rem auto;
+        text-decoration: none;
+        outline: none;
 
         &:hover {
-          background-color: rgba($color-red-dark-1, 0.8);
+          background-color: rgba($color-dark-1, 0.8);
           transform: translateY(-0.2rem);
         }
       }

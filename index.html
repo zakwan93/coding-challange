@@ -5,31 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link
-            href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
+            href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <title>Bike Rentals</title>
     </head>
     <body class="container">
-        <h1>Bike Rentals</h1>
-        <div class="card-list" id="card-list">
-            <!-- <div class="card-container" id="card"> -->
-            <!-- <img src="" alt="" id="img">
-                <h3 id="name"></h3>
-                <h4 id="price"></h4> -->
-            <!-- <a href="#from" class="card_link">BOOK NOW</a> -->
-            <!-- </div> -->
-        </div>
-        <form id="form">
-            <div class="select">
-                <h2>Select Your Bike</h2>
-                <select id="select-bike" class="select-option" name="bike">
-                </select>
-                <p id="error-message"></p>
-                <input type="submit" value="Rent this bike" id="submit"
-                    class="submit">
+        <header class="header">
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main linear-gradient-text">Biking</span>
+                    <span class="heading-primary--sub linear-gradient-text">it
+                        where life happens</span>
+                </h1>
+
+                <a href="#card-list" class="card_link">Discover Our
+                    Bikes</a>
             </div>
-        </form>
+        </header>
+        <main>
+            <h1 class="section__heading">
+                <span class="linear-gradient-text">Bike You Can Rent On One
+                    Click</span>
+            </h1>
+            <div class="card-list" id="card-list">
+                <!-- From JS -->
+            </div>
+            <form id="form">
+                <div class="select">
+                    <h2 class="linear-gradient-text">Select Your Bike Or
+                        Accessory</h2>
+                    <select id="select-bike" class="select-option"
+                        name="bike">
+                    </select>
+                    <p id="error-message"></p>
+                    <input type="submit" value="Rent this bike" id="submit"
+                        class="card_link submit">
+                </div>
+            </form>
+        </main>
 
         <script type="text/javascript" src="main.js"></script>
     </body>

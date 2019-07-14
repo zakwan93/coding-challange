@@ -52,7 +52,7 @@ dropdown.required = true;
 dropdown.length = 0;
 
 let defaultOption = document.createElement("option");
-defaultOption.text = "Select One Bike";
+defaultOption.text = "Select One Option";
 
 dropdown.add(defaultOption);
 dropdown.selectedIndex = 0;
@@ -63,8 +63,8 @@ for (let i = 0; i < mydata.length; i++) {
   let card = `<div class="card-container" id="card">
      <img src="${mydata[i].image}" alt="" id="img">
     <h3 id="name">${mydata[i].name}</h3>
-    <h4 id="price">Price: ${mydata[i].price}</h4>
-    <a href="#form" class="card_link">BOOK NOW</a>
+    <h4 id="price">Price: $ ${mydata[i].price}</h4>
+    <a href="#submit" class="card_link">BOOK NOW</a>
   </div>`;
   cardList.insertAdjacentHTML("afterbegin", card);
 }
@@ -73,17 +73,16 @@ for (let i = 0; i < mydata.length; i++) {
   var option = document.createElement("option");
   option.text = mydata[i].name;
   option.value = mydata[i].name;
-  if (mydata[i].product_type === "bike") {
-    dropdown.add(option);
-  }
+
+  dropdown.add(option);
 }
 
 let myForm = document.getElementById("submit");
 var error = document.getElementById("error-message");
-var content = document.createTextNode("Please select one option");
+var content = document.createTextNode("Select One Option");
 
 myForm.addEventListener("click", function() {
-  if (dropdown.value == "Select One Bike") {
+  if (dropdown.value == "Select One Option") {
     alert("Please select one bike");
     error.appendChild(content);
     dropdown.style.borderColor = "red";
