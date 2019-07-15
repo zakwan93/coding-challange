@@ -3,7 +3,7 @@
 $color-grey-light-1: #d6cab0;
 $color-grey-light-2: #f9f7f6;
 $color-dark-1: #c69963;
-$color-blue-dark-1: #101d2c;
+$color-blue-dark-1: #263647;
 // FONT VARIABLES
 $font-primary: "Do Hyeon", sans-serif;
 
@@ -52,12 +52,14 @@ body {
 
   .card-list {
     width: 85vw;
+    max-width: 120rem;
     margin: 2rem auto;
     margin-bottom: 10rem;
     display: grid;
     padding: 2rem 10rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
+
     @media only screen and(max-width: $bp-largest) {
       padding: 2rem;
     }
@@ -100,11 +102,13 @@ body {
   }
 
   form {
+    max-width: 120rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+
     .select {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      margin: 0 auto;
       text-transform: uppercase;
       backface-visibility: hidden;
       margin-bottom: 6rem;

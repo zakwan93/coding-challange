@@ -25,11 +25,12 @@ body {
   height: 100vh;
   width: 100%; }
   .container .linear-gradient-text {
-    background: -webkit-linear-gradient(#101d2c, #c69963);
+    background: -webkit-linear-gradient(#263647, #c69963);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text; }
   .container .card-list {
     width: 85vw;
+    max-width: 120rem;
     margin: 2rem auto;
     margin-bottom: 10rem;
     display: grid;
@@ -64,59 +65,61 @@ body {
     .container .card_link:hover, .container .card_link:link:hover, .container .card_link:visited:hover {
       transform: translateY(3px);
       box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.3); }
-  .container form .select {
+  .container form {
+    max-width: 120rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 0 auto;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-    height: 100%; }
-    @media only screen and (max-width: 37.5em) {
-      .container form .select {
-        width: 100%; } }
-    .container form .select label {
-      font-size: 3rem;
-      display: block;
-      font-weight: 800;
-      letter-spacing: 0.5rem;
-      margin-bottom: 1rem;
-      width: 100%; }
-      @media only screen and (max-width: 50em) {
-        .container form .select label {
-          letter-spacing: 0.2; } }
+    margin: 0 auto; }
+    .container form .select {
+      text-transform: uppercase;
+      backface-visibility: hidden;
+      margin-bottom: 6rem;
+      height: 100%; }
       @media only screen and (max-width: 37.5em) {
-        .container form .select label {
-          letter-spacing: 0.1; } }
-    .container form .select-option {
-      padding: 0.5rem 0.8rem;
-      border: none;
-      font-size: 2rem;
-      font-family: "Do Hyeon", sans-serif;
-      box-shadow: none;
-      background: transparent;
-      background-image: none;
-      -webkit-appearance: none;
-      border: 1px solid #d6cab0;
-      width: 70%;
-      margin: 2rem auto;
-      border-radius: 0.3rem;
-      overflow: hidden;
-      background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 98% 50%; }
-      @media only screen and (max-width: 37.5em) {
-        .container form .select-option {
-          width: 90%; } }
-      .container form .select-option:focus {
-        outline: none; }
-    .container form .select .submit {
-      margin: 1.5rem auto;
-      text-decoration: none;
-      outline: none;
-      -webkit-appearance: none; }
-      .container form .select .submit:hover {
-        background-color: rgba(198, 153, 99, 0.8);
-        transform: translateY(-0.2rem); }
+        .container form .select {
+          width: 100%; } }
+      .container form .select label {
+        font-size: 3rem;
+        display: block;
+        font-weight: 800;
+        letter-spacing: 0.5rem;
+        margin-bottom: 1rem;
+        width: 100%; }
+        @media only screen and (max-width: 50em) {
+          .container form .select label {
+            letter-spacing: 0.2; } }
+        @media only screen and (max-width: 37.5em) {
+          .container form .select label {
+            letter-spacing: 0.1; } }
+      .container form .select-option {
+        padding: 0.5rem 0.8rem;
+        border: none;
+        font-size: 2rem;
+        font-family: "Do Hyeon", sans-serif;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        border: 1px solid #d6cab0;
+        width: 70%;
+        margin: 2rem auto;
+        border-radius: 0.3rem;
+        overflow: hidden;
+        background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 98% 50%; }
+        @media only screen and (max-width: 37.5em) {
+          .container form .select-option {
+            width: 90%; } }
+        .container form .select-option:focus {
+          outline: none; }
+      .container form .select .submit {
+        margin: 1.5rem auto;
+        text-decoration: none;
+        outline: none;
+        -webkit-appearance: none; }
+        .container form .select .submit:hover {
+          background-color: rgba(198, 153, 99, 0.8);
+          transform: translateY(-0.2rem); }
 
 footer {
   margin-top: 15rem;
@@ -143,12 +146,11 @@ footer {
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
       height: 100vh; } }
   .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
 
 .heading-primary {
   color: #fff;
@@ -178,10 +180,10 @@ h3 {
   font-size: 2rem;
   text-align: center;
   padding: 1.25rem;
-  background-color: #101d2c;
+  background-color: #263647;
   color: #fff;
   font-weight: 400;
-  transform: translateY(-2rem);
+  transform: translateY(-3rem);
   align-self: center; }
 
 h4 {

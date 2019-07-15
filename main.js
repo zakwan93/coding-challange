@@ -61,7 +61,7 @@ var mydata = data.products.reverse();
 
 for (let i = 0; i < mydata.length; i++) {
   let card = `<div class="card-container" id="card">
-     <img src="${mydata[i].image}" alt="" id="img">
+     <img src="${mydata[i].image}" alt=${mydata[i].name} id="img">
     <h3 id="name">${mydata[i].name}</h3>
     <h4 id="price">Price: $ ${mydata[i].price}</h4>
     <a href="#submit" class="card_link">BOOK NOW</a>
